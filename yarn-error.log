@@ -2,7 +2,7 @@ Arguments:
   /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
 
 PATH: 
-  /Users/PaulEhrhardt/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/PaulEhrhardt/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/PaulEhrhardt/.rbenv/shims:/Users/PaulEhrhardt/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+  /Users/jjmac/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/jjmac/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/jjmac/.rbenv/shims:/usr/local/opt/rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin
 
 Yarn version: 
   1.5.1
@@ -18,7 +18,9 @@ npm manifest:
     "name": "spacefill",
     "private": true,
     "dependencies": {
-      "@rails/webpacker": "^3.3.0"
+      "@rails/webpacker": "^3.3.0",
+      "bootstrap": "3",
+      "jquery": "^3.3.1"
     },
     "devDependencies": {
       "webpack-dev-server": "^3.1.1"
@@ -927,6 +929,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
     dependencies:
       hoek "4.x.x"
+  
+  bootstrap@3:
+    version "3.3.7"
+    resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
   
   brace-expansion@^1.1.7:
     version "1.1.11"
@@ -3056,6 +3062,10 @@ Lockfile:
   isstream@~0.1.2:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+  
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   
   js-base64@^2.1.8, js-base64@^2.1.9:
     version "2.4.3"
