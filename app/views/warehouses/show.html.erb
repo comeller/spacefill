@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="warehouse-content" >
+        <h2 class="centered"><%= @warehouse.pallets %> pallets in <%= @warehouse.address %></h2>
+        <div class="warehouse-image" style="background-image: url(http://luxreview.com/upload/system/2016/03/07133245.jpg)"></div>
+        <div class="warehouse-description">
+          <h3>Description</h3>
+          <p><%= @warehouse.description %></p>
+          <h3>Services</h3>
+          <h3>Features</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="warehouse-request-form">
+        <h2>My request</h2>
+        <%= simple_form_for [@warehouse, @booking] do |f|  %>
+          <%= f.input :booked_pallets, label: "Number of pallets to be stored" %>
+          <%= f.input :customer_request, label: "Please detail your need: services required, number of loading per month..." %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
