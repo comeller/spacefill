@@ -4,4 +4,9 @@ class WarehousesController < ApplicationController
     @warehouses = Warehouse.all
   end
 
+  def show
+    @warehouse = Warehouse.find(params[:id])
+    @booking = Booking.new
+  end
+  
 end
