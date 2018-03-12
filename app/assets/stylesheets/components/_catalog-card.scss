@@ -1,0 +1,57 @@
+.catalog-content {
+  display:flex;
+}
+
+.catalog-cards-container {
+  background-color: $light-gray;
+}
+
+.catalog-card {
+  background-color: white;
+  height: 300px;
+  margin: 15px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px #d5d6d8;
+}
+
+.photo-box {
+  position: relative;
+  height: 200px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');
+  background-size: cover !important;
+  background-position: center;
+}
+
+.company-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  width: 40px;
+}
+
+.price-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 5px;
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+  padding: 5px;
+}
+
+.text-box {
+  border-top: 5px solid $green;
+  background-color: white;
+}
+
+
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  background-color: white;
+  overflow: hidden;
+}
