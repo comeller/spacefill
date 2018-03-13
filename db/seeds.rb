@@ -19,8 +19,8 @@ url = ["https://www.tollgroup.com/sites/default/files/styles/open_graph_image/pu
     alcohol_certified: [true, false].sample,
     frozen_certified: [true, false].sample,
     transportation_services: [true, false].sample,
-    fullfilment_services: [true, false].sample,
-    devaning_services: [true, false].sample,
+    fulfillment_services: [true, false].sample,
+    devanning_services: [true, false].sample,
   }
 
   warehouse = Warehouse.new(args_hash)
