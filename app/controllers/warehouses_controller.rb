@@ -34,6 +34,6 @@ class WarehousesController < ApplicationController
   def warehouse_params
     params.require(:warehouse).permit(:address, :surface, :pallets, :description,
      :public_price, :food_grade_certified, :frozen_certified, :alcohol_certified,
-     :fullfilment_services, :transportation_services, :devaning_services)
+     :fulfillment_services, :transportation_services, :devanning_services)
   end
 end
