@@ -6,3 +6,27 @@
 .centered {
   text-align: center;
 }
+
+.warehouse-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feature {
+  flex: 1 0 250px;
+  margin-bottom: 5px;
+  &:nth-child(1) {
+    margin-right: 5px;
+  }
+}
+
+.grey {
+  color: #CCCCCC;
+  font-weight: 900
+}
+
+.black {
+  color: black;
+  font-weight: bold;
+}

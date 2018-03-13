@@ -1,34 +1,39 @@
-<div class="catalog-content">
-  <div class="catalog-cards-container">
-    <div class="row">
-      <% @warehouses.each do |warehouse| %>
-      <div class="col-sm-12 col-md-6">
-        <div class="catalog-card">
-          <div class="photo-box">
-            <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <div class="price-box">
-            <%= warehouse.public_price %> € / month
-          </div>
-          </div>
-          <div class="text-box">
-            <%= warehouse.address %>
-            <div class="services-box">
-              <ul class="list-inline">
-                <% if warehouse.transportation_services %>
-                <li> <i class="far fa-check-circle"></i> Transportation</li>
-                <% end %>
-                <% if warehouse.fullfilment_services %>
-                <li><i class="fas fa-check"></i> Fullfilment</li>
-                <% end %>
-              </ul>
+<div class="main-container">
+  <div class="catalog-content">
+    <div class="catalog-cards-container">
+      <div class="row">
+        <% @warehouses.each do |warehouse| %>
+        <div class="col-sm-12 col-md-6">
+          <div class="catalog-card">
+            <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
+              <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              <div class="price-box">
+              <%= warehouse.public_price %> € / month
+            </div>
+            </div>
+            <div class="text-box">
+              <%= warehouse.address %>
+              <div class="services-box">
+                <ul class="list-inline">
+                  <% if warehouse.transportation_services %>
+                  <li> <i class="far fa-check-circle"></i> Transportation</li>
+                  <% end %>
+                  <% if warehouse.fulfillment_services %>
+                  <li><i class="fas fa-check"></i> Fullfilment</li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
-  <div id="map">
-    map
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
   </div>
 </div>
