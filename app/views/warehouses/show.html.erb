@@ -4,7 +4,7 @@
     <div class="col-md-8">
       <div class="warehouse-content" >
         <h2 class="centered"><%= @warehouse.pallets %> pallets in <%= @warehouse.address %></h2>
-        <div class="warehouse-image" style="background-image: url(http://luxreview.com/upload/system/2016/03/07133245.jpg)"></div>
+        <div class="warehouse-image" style="background-image: url('<%= cl_image_path @warehouse.photo, height: 300, width: 400, crop: :fill %>')"></div>
         <div class="warehouse-description">
             <h3>Description</h3>
             <p><%= @warehouse.description %></p>
