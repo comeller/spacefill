@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312163146) do
+ActiveRecord::Schema.define(version: 20180313105847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 20180312163146) do
     t.boolean "food_grade_certified"
     t.boolean "frozen_certified"
     t.boolean "alcohol_certified"
-    t.boolean "fullfilment_services"
+    t.boolean "fulfillment_services"
     t.boolean "transportation_services"
-    t.boolean "devaning_services"
+    t.boolean "devanning_services"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
