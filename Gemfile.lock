@@ -194,7 +194,7 @@ DEPENDENCIES
   devise
   faker
   figaro
-  font-awesome-sass (~> 4.7)
+  font-awesome-sass
   geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
