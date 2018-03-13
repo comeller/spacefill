@@ -5,7 +5,7 @@
         <% @warehouses.each do |warehouse| %>
         <div class="col-sm-12 col-md-6">
           <div class="catalog-card">
-            <div class="photo-box">
+            <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
               <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
               <div class="price-box">
               <%= warehouse.public_price %> € / month
@@ -18,7 +18,7 @@
                   <% if warehouse.transportation_services %>
                   <li> <i class="far fa-check-circle"></i> Transportation</li>
                   <% end %>
-                  <% if warehouse.fullfilment_services %>
+                  <% if warehouse.fulfillment_services %>
                   <li><i class="fas fa-check"></i> Fullfilment</li>
                   <% end %>
                 </ul>
