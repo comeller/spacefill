@@ -1,32 +1,56 @@
 <div class="catalog-content">
   <div class="catalog-cards-container">
-    <div class="row">
       <% @warehouses.each do |warehouse| %>
-      <div class="col-sm-12 col-md-6">
         <div class="catalog-card">
           <div class="photo-box">
             <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
             <div class="price-box">
             <%= warehouse.public_price %> € / month
           </div>
+          <div class="metrics-box">
+            <div class="pallets-box">
+              <p class="metric"> <%= warehouse.pallets %> </p>
+              Pallets <br>
+            </div>
+            <div class="separator">
+            </div>
+            <div class="surface-box">
+              <p class="metric"> <%= warehouse.surface %></p>
+              Sq. Meters <br>
+            </div>
+          </div>
           </div>
           <div class="text-box">
-            <%= warehouse.address %>
+            <p class="address"> <%= warehouse.address %> </p>
             <div class="services-box">
               <ul class="list-inline">
                 <% if warehouse.transportation_services %>
-                <li> <i class="far fa-check-circle"></i> Transportation</li>
+                <li> <i class="fa fa-check"></i> Transportation</li>
                 <% end %>
                 <% if warehouse.fullfilment_services %>
-                <li><i class="fas fa-check"></i> Fullfilment</li>
+                <li><i class="fa fa-check"></i> Fullfilment</li>
+                <% end %>
+                <% if warehouse.devaning_services %>
+                <li><i class="fa fa-check"></i> Devanning</li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="certifications-box">
+              <ul class="list-inline">
+                <% if warehouse.food_grade_certified %>
+                <li> <i class="fa fa-lemon"></i> Food Certified</li>
+                <% end %>
+                <% if warehouse.frozen_certified %>
+                <li> <i class="fas fa-snowflake"></i> Frozen Certified</li>
+                <% end %>
+                <% if warehouse.alcohol_certified %>
+                <li><i class="fas fa-glass-martini"></i> Alcohol Certified</li>
                 <% end %>
               </ul>
             </div>
           </div>
         </div>
-      </div>
       <% end %>
-    </div>
   </div>
   <div id="map">
     map
