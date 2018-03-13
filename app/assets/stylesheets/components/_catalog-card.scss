@@ -1,10 +1,11 @@
 .catalog-content {
   display:flex;
+  flex-wrap: wrap;
 }
 
 .catalog-cards-container {
   background-color: $light-gray;
-  flex: 1 1 auto;
+  flex: 1 1 360px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
