@@ -3,10 +3,15 @@
   <div class="banner-content" >
     <h1>Warehouse on demand</h1>
     <p>Find short-term storage without commitment everywhere in France</p>
-    <form class="form-inline">
-      <input type="text" class="form-control" id="warehouse_address" placeholder="Paris, Rhône Alpes...">
-      <button type="submit" class="btn btn-primary mb-2">Find a warehouse</button>
-    </form>
+    <div class="search-bar-container">
+      <form class="form-inline">
+        <div class="search-bar-input">
+          <i class="fa fa-map-marker"></i>
+          <input type="text" class="form-control" id="warehouse_address" placeholder="Paris, Rhône Alpes, Picardie..." action="/warehouses">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Find a warehouse</button>
+      </form>
+    </div>
   </div>
 </div>
 

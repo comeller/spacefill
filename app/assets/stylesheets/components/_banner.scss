@@ -19,3 +19,38 @@
   opacity: 0.8;
   margin-bottom: 30px;
 }
+.form-inline {
+  display: inline-flex;
+  padding-top: 10vh;
+}
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-size: 20px;
+}
+.search-bar-input {
+  position: relative;
+  color: #CDCDCD;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 5px;
+  i {
+    position: absolute;
+    left: 12px;
+    top: 22%;
+    font-size: 22px;
+    color: #484848;
+  }
+}
+#warehouse_address {
+  padding-left: 30px;
+  width: 350px;
+}
+
+#banner-form {
+  height: 900px;
+}

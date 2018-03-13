@@ -2,7 +2,7 @@
   <div class="catalog-cards-container">
       <% @warehouses.each do |warehouse| %>
         <div class="catalog-card">
-          <div class="photo-box">
+          <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
             <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
             <div class="price-box">
             <%= warehouse.public_price %> € / month
@@ -27,10 +27,10 @@
                 <% if warehouse.transportation_services %>
                 <li> <i class="fa fa-check"></i> Transportation</li>
                 <% end %>
-                <% if warehouse.fullfilment_services %>
-                <li><i class="fa fa-check"></i> Fullfilment</li>
+                <% if warehouse.fulfillment_services %>
+                <li><i class="fa fa-check"></i> Fulfillment</li>
                 <% end %>
-                <% if warehouse.devaning_services %>
+                <% if warehouse.devanning_services %>
                 <li><i class="fa fa-check"></i> Devanning</li>
                 <% end %>
               </ul>
@@ -52,7 +52,6 @@
         </div>
       <% end %>
   </div>
-  <div id="map">
-    map
+  <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
   </div>
 </div>
