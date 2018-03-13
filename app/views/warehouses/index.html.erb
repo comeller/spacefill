@@ -1,39 +1,57 @@
-<div class="main-container">
-  <div class="catalog-content">
-    <div class="catalog-cards-container">
-      <div class="row">
-        <% @warehouses.each do |warehouse| %>
-        <div class="col-sm-12 col-md-6">
-          <div class="catalog-card">
-            <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
-              <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-              <div class="price-box">
-              <%= warehouse.public_price %> € / month
+<div class="catalog-content">
+  <div class="catalog-cards-container">
+      <% @warehouses.each do |warehouse| %>
+        <div class="catalog-card">
+          <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
+            <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <div class="price-box">
+            <%= warehouse.public_price %> € / month
+          </div>
+          <div class="metrics-box">
+            <div class="pallets-box">
+              <p class="metric"> <%= warehouse.pallets %> </p>
+              Pallets <br>
             </div>
+            <div class="separator">
             </div>
-            <div class="text-box">
-              <%= warehouse.address %>
-              <div class="services-box">
-                <ul class="list-inline">
-                  <% if warehouse.transportation_services %>
-                  <li> <i class="far fa-check-circle"></i> Transportation</li>
-                  <% end %>
-                  <% if warehouse.fulfillment_services %>
-                  <li><i class="fas fa-check"></i> Fullfilment</li>
-                  <% end %>
-                </ul>
-              </div>
+            <div class="surface-box">
+              <p class="metric"> <%= warehouse.surface %></p>
+              Sq. Meters <br>
+            </div>
+          </div>
+          </div>
+          <div class="text-box">
+            <p class="address"> <%= warehouse.address %> </p>
+            <div class="services-box">
+              <ul class="list-inline">
+                <% if warehouse.transportation_services %>
+                <li> <i class="fa fa-check"></i> Transportation</li>
+                <% end %>
+                <% if warehouse.fulfillment_services %>
+                <li><i class="fa fa-check"></i> Fulfillment</li>
+                <% end %>
+                <% if warehouse.devanning_services %>
+                <li><i class="fa fa-check"></i> Devanning</li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="certifications-box">
+              <ul class="list-inline">
+                <% if warehouse.food_grade_certified %>
+                <li> <i class="fa fa-lemon"></i> Food Certified</li>
+                <% end %>
+                <% if warehouse.frozen_certified %>
+                <li> <i class="fas fa-snowflake"></i> Frozen Certified</li>
+                <% end %>
+                <% if warehouse.alcohol_certified %>
+                <li><i class="fas fa-glass-martini"></i> Alcohol Certified</li>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>
-        <% end %>
-      </div>
-    </div>
-    <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-    ></div>
+      <% end %>
+  </div>
+  <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
   </div>
 </div>

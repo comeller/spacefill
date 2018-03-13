@@ -4,12 +4,20 @@
 
 .catalog-cards-container {
   background-color: $light-gray;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
 }
 
 .catalog-card {
+  flex: 0 0 360px;
   background-color: white;
-  height: 300px;
-  margin: 15px;
+  height: 350px;
+  margin-bottom: 15px;
   border-radius: 2px;
   box-shadow: 1px 2px 2px #d5d6d8;
 }
@@ -43,8 +51,69 @@
 .text-box {
   border-top: 5px solid $green;
   background-color: white;
+  font-size: 12px;
 }
 
+.address {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 45px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.certifications-box {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.list-inline {
+  margin-bottom: 0px;
+}
+
+.services-box {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.metric {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.metrics-box {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: -40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 1px 1px 2px #d5d6d8;
+}
+
+.surface-box {
+  flex: 0 0 50%;
+  font-size: 12px;
+  text-align: center;
+  border-left: 1px solid #d5d6d8;
+}
+
+.separator {
+  flex: 0 0 1px;
+  height: 80%;
+  background-color: #d5d6d8
+}
+
+.pallets-box {
+  flex: 0 0 50%;
+  font-size: 12px;
+  text-align: center;
+}
 
 #map {
   flex: 0 0 450px;
