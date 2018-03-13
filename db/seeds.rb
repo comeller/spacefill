@@ -12,9 +12,8 @@ url = ["https://www.tollgroup.com/sites/default/files/styles/open_graph_image/pu
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRepmKU53XgqldC5s7x9xeVVJsOWhgXRcIMM9j0QMIska4UMRDB8w"
 ]
 
- 10.times do
   args_hash = {
-    address: "16 villa Gaudelet, Paris",
+    address: "1 Place de la Comédie, 69001 Lyon",
     surface: 300,
     pallets: 50,
     description: "A great storage space in central Paris with professionnal services",
@@ -31,5 +30,3 @@ url = ["https://www.tollgroup.com/sites/default/files/styles/open_graph_image/pu
   warehouse.user = user
   warehouse.remote_photo_url = url.sample
   warehouse.save
-
- end
