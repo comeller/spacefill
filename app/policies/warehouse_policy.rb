@@ -12,4 +12,8 @@ class WarehousePolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def manage_your_space?
+    true
+  end
 end

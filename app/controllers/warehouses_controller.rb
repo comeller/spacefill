@@ -43,6 +43,11 @@ class WarehousesController < ApplicationController
     end
   end
 
+  def manage_your_space
+    @warehouses = current_user.warehouses
+    authorize :warehouse
+  end
+
 
 
   private
