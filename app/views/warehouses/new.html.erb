@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <%= simple_form_for(@warehouse)  do |f| %>
+          <%= simple_form_for(@warehouse) do |f| %>
             <%= f.input :address %>
             <%= f.input :surface, placeholder: "in sq meters" %>
             <%= f.input :pallets %>
@@ -24,19 +24,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-<!--
-t.string "address"
-t.integer "surface"
-t.integer "pallets"
-t.text "description"
-t.integer "public_price"
-t.boolean "food_grade_certified"
-t.boolean "frozen_certified"
-t.boolean "alcohol_certified"
-t.boolean "fullfilment_services"
-t.boolean "transportation_services"
-t.boolean "devaning_services" -->
