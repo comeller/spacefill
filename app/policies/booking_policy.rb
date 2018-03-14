@@ -1,19 +1,15 @@
-class WarehousePolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
     end
   end
 
-  def show?
-    true
-  end
-
   def create?
     true
   end
 
-  def manage_your_space?
+  def my_bookings?
     true
   end
 end

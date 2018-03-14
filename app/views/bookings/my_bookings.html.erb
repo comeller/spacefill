@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>My bookings</h1>
+  <div class="request-container">
+    <% @bookings.each do |booking| %>
+      <div class="request-card">
+        <div class="request-text">
+        <p>Booked on <strong><%= booking.created_at.strftime('%m/%d/%Y') %></strong></p>
+        <p>Number of pallets: <%= booking.booked_pallets %></p>
+        <p>Request: <%= booking.customer_request.first(250) %></p>
+        </div>
+        <%= link_to warehouse_path(booking.warehouse), class: "warehouse-targeted" do%>
+          <div>
+            <p> <strong><%= booking.warehouse.address %></strong></p>
+            <div class="request-photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.warehouse.photo %>')">
+            </div>
+          </div>
+        <% end %>
+        <div class="request-status">
+          <p>Status</p>
+          <p><%= booking.status %></p>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>

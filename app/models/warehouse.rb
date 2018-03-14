@@ -1,5 +1,6 @@
 class Warehouse < ApplicationRecord
   belongs_to :user
+  has_many :bookings
 
   validates :address, presence: true
   validates :surface, presence: true, numericality: { only_integer: true }
