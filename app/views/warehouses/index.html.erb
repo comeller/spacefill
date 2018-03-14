@@ -1,5 +1,8 @@
 <div class="catalog-content">
   <div class="catalog-cards-container">
+    <div class="filters-box">
+      <%= render "filter_form" %>
+    </div>
       <% @warehouses.each do |warehouse| %>
         <div class="catalog-card">
           <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
