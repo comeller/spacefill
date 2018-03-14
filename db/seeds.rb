@@ -18,9 +18,10 @@ urls = ["https://res.cloudinary.com/dixy9tipv/image/upload/v1520960396/mahadjnu4
 "https://res.cloudinary.com/dixy9tipv/image/upload/v1520960394/xzkfmly7sano2b3ofz8s.jpg"
 ]
 
- 20.times do
+cities = ['Colombelles', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Cournon d'Auvergne", "Argentre du Plessis", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
+
+20.times do
   args_hash = {
-    address: Faker::Address.street_address + ', ' + Faker::Address.city,
     surface: rand(100..500),
     pallets: rand(30..200),
     description: Faker::Lorem.paragraph(6),
@@ -35,6 +36,7 @@ urls = ["https://res.cloudinary.com/dixy9tipv/image/upload/v1520960396/mahadjnu4
 
   warehouse = Warehouse.new(args_hash)
   warehouse.user = [user1, user2, user3].sample
+  warehouse.address = cities.sample
   warehouse.remote_photo_url = urls.sample
   warehouse.save
 
