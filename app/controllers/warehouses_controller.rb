@@ -2,8 +2,13 @@ class WarehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @warehouses = Warehouse.all
-    @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
+    if params[:query_localisation].present?
+      sql_query = "address ILIKE :query_localisation and latitude is not null and longitude is not null"
+      @warehouses = Warehouse.where(sql_query, query_localisation: "%#{params[:query_localisation]}%")
+    else
+      @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
+    end
+    # raise
     @markers = @warehouses.map do |warehouse|
       {
         lat: warehouse.latitude,
