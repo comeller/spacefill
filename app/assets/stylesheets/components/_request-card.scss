@@ -4,10 +4,11 @@
   justify-content: space-around;
   align-items: center;
   font-size: 15px;
+  width: 90%;
 }
 
 .request-card {
-  max-width: 800px;
+  flex : 0 1 800px;
   height: 200px;
   background-color: white;
   border-radius: 2px;

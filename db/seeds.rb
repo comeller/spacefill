@@ -30,7 +30,7 @@ requests = ["We are a small company, we would need transportation once a week",
 statuses = ["pending", "approved", "refused"]
 # -------------
 
-20.times do
+10.times do
   args_hash = {
     surface: rand(100..500),
     pallets: rand(30..200),
@@ -48,10 +48,11 @@ statuses = ["pending", "approved", "refused"]
   user = [user1, user2, user3].sample
   warehouse.user = user
   warehouse.address = cities.sample
+  cities.delete(warehouse.address)
   warehouse.remote_photo_url = urls.sample
   warehouse.save
 
-  5.times do
+  3.times do
     booking_hash = {
       customer_request: requests.sample,
       status: statuses.sample,
