@@ -1,18 +1,75 @@
-<% @warehouses.each do |warehouse| %>
-  <div class="card-warehouse">
-    <h2><%= warehouse.address %></h2>
-    <%= cl_image_tag warehouse.photo, height: 300, width: 400, crop: :fill %>
-    <div class="card-booking">
-      <% warehouse.bookings.each do |booking| %>
-        <h3>Booking requested on <%= booking.created_at %></h3>
-        <p>Pallet slots required: <%= booking.booked_pallets %></p>
-        <p>Request: <%= booking.customer_request %></p>
-        <% if booking.status == "pending"%>
-          <a href="#" class="btn btn-primary">Approve</a>
-        <% else %>
-          <p>Request status: <%= booking.status %></p>
+<div class="container">
+  <h1>Your dashboard</h1>
+  <% @warehouses.each do |warehouse| %>
+    <%= link_to warehouse_path(warehouse), class: "catalog-card" do %>
+      <div class="catalog-card dashboard-card">
+        <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
+          <% if warehouse.user.photo.nil? %>
+            <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <% else %>
+            <%= cl_image_tag warehouse.user.photo, class: "company-logo" %>
+          <% end %>
+          <div class="price-box">
+          <%= warehouse.public_price %> € / month
+        </div>
+        <div class="metrics-box">
+          <div class="pallets-box">
+            <p class="metric"> <%= warehouse.pallets %> </p>
+            Pallets <br>
+          </div>
+          <div class="separator">
+          </div>
+          <div class="surface-box">
+            <p class="metric"> <%= warehouse.surface %></p>
+            Sq. Meters <br>
+          </div>
+        </div>
+        </div>
+        <div class="text-box">
+          <p class="address"> <%= warehouse.address %> </p>
+          <div class="services-box">
+            <ul class="list-inline">
+              <% if warehouse.transportation_services %>
+              <li> <i class="fa fa-check"></i> Transportation</li>
+              <% end %>
+              <% if warehouse.fulfillment_services %>
+              <li><i class="fa fa-check"></i> Fulfillment</li>
+              <% end %>
+              <% if warehouse.devanning_services %>
+              <li><i class="fa fa-check"></i> Devanning</li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="certifications-box">
+            <ul class="list-inline">
+              <% if warehouse.food_grade_certified %>
+              <li> <i class="fa fa-lemon"></i> Food Certified</li>
+              <% end %>
+              <% if warehouse.frozen_certified %>
+              <li> <i class="fas fa-snowflake"></i> Frozen Certified</li>
+              <% end %>
+              <% if warehouse.alcohol_certified %>
+              <li><i class="fas fa-glass-martini"></i> Alcohol Certified</li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+      <div class="wrap-bookings">
+        <h3>Your bookings for this warehouse</h3>
+        <% warehouse.bookings.each do |booking| %>
+          <div class="dashboard-booking">
+            <h4><%= booking.created_at.strftime("%m/%d/%Y") %></h4>
+            <p>Pallet slots required: <%= booking.booked_pallets %></p>
+            <p>Request: <%= booking.customer_request %></p>
+            <% if booking.status == "pending"%>
+              <a href="#" class="btn btn-primary">Approve</a>
+            <% else %>
+              <p>Request status: <%= booking.status %></p>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
