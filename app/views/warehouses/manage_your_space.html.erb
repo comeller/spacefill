@@ -1,0 +1,18 @@
+<% @warehouses.each do |warehouse| %>
+  <div class="card-warehouse">
+    <h2><%= warehouse.address %></h2>
+    <%= cl_image_tag warehouse.photo, height: 300, width: 400, crop: :fill %>
+    <div class="card-booking">
+      <% warehouse.bookings.each do |booking| %>
+        <h3>Booking requested on <%= booking.created_at %></h3>
+        <p>Pallet slots required: <%= booking.booked_pallets %></p>
+        <p>Request: <%= booking.customer_request %></p>
+        <% if booking.status == "pending"%>
+          <a href="#" class="btn btn-primary">Approve</a>
+        <% else %>
+          <p>Request status: <%= booking.status %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

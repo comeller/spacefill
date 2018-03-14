@@ -18,6 +18,15 @@ urls = ["https://res.cloudinary.com/dixy9tipv/image/upload/v1520960396/mahadjnu4
 "https://res.cloudinary.com/dixy9tipv/image/upload/v1520960394/xzkfmly7sano2b3ofz8s.jpg"
 ]
 
+# BOOKINGS CREATION
+requests = ["We are a small company, we would need transportation once a week",
+  "We need ultra low temperature to store our products",
+  "Your space seems perfect for us, very simple need"
+]
+
+statuses = ["pending", "approved", "refused"]
+# -------------
+
  20.times do
   args_hash = {
     address: Faker::Address.street_address + ', ' + Faker::Address.city,
@@ -34,8 +43,22 @@ urls = ["https://res.cloudinary.com/dixy9tipv/image/upload/v1520960396/mahadjnu4
   }
 
   warehouse = Warehouse.new(args_hash)
-  warehouse.user = [user1, user2, user3].sample
+  user = [user1, user2, user3].sample
+  warehouse.user = user
   warehouse.remote_photo_url = urls.sample
   warehouse.save
+
+  5.times do
+    booking_hash = {
+      customer_request: requests.sample,
+      status: statuses.sample,
+      booked_pallets: rand(30..200),
+    }
+    booking = Booking.new(booking_hash)
+    booking.warehouse = warehouse
+    booking.user = user
+    booking.save
+  end
+
 
  end
