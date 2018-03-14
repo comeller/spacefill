@@ -2,14 +2,23 @@ class WarehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @warehouses = Warehouse.all
-    # @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
-    # @markers = @warehouses.map do |warehouse|
-    #   {
-    #     lat: warehouse.latitude,
-    #     lng: warehouse.longitude
-    #   }
-    # end
+    if params[:query_localisation].present?
+      # sql_query = "address ILIKE :query_localisation and latitude is not null and longitude is not null"
+      # @warehouses = Warehouse.where(sql_query, query_localisation: "%#{params[:query_localisation]}%")
+      @warehouses = Warehouse.near(params[:query_localisation], 10)
+      @warehouses = Warehouse.where.not(latitude: nil, longitude: nil) if @warehouses.first.nil?
+    else
+      @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
+    end
+    # raise
+    @markers = @warehouses.map do |warehouse|
+      {
+        lat: warehouse.latitude,
+        lng: warehouse.longitude,
+        # Icons: comment to come back to google red pins
+        icon: 'http://res.cloudinary.com/dixy9tipv/image/upload/c_scale,h_50/v1520948069/152094739257384144.png',
+      }
+    end
   end
 
   def show

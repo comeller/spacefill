@@ -1,0 +1,30 @@
+<%= form_tag("/warehouses", method: "get") do %>
+
+  <%= label_tag(:query_localisation, "Address") %>
+  <%= text_field_tag(:query_localisation) %>
+
+  <%= label_tag(:min_pallet, "Pallets min") %>
+  <%= number_field(:warehouse, :pallets) %>
+  <%= label_tag(:min_surface, "Surface min") %>
+  <%= number_field(:warehouse, :surface) %>
+  <%= label_tag(:max_price, "Price max") %>
+  <%= number_field(:warehouse, :public_price) %>
+
+  <%= label_tag(:min_pallet, "Pallets min") %>
+
+  <%= check_box_tag(:food_grade_certified) %>
+  <%= label_tag(:food_grade_certified, "Food certified") %>
+  <%= check_box_tag(:alcohol_certified) %>
+  <%= label_tag(:alcohol_certified, "Alcohol certified") %>
+  <%= check_box_tag(:frozen_certified) %>
+  <%= label_tag(:frozen_certified, "Frozen certified") %>
+
+  <%= check_box_tag(:fulfillment_services) %>
+  <%= label_tag(:fulfillment_services, "Fulfillment") %>
+  <%= check_box_tag(:transportation_services) %>
+  <%= label_tag(:transportation_services, "Transportation") %>
+  <%= check_box_tag(:devanning_services) %>
+  <%= label_tag(:devanning_services, "Devanning") %>
+
+  <%= submit_tag("Search") %>
+<% end %>
