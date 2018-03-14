@@ -1,16 +1,27 @@
+Warehouse.destroy_all
+User.destroy_all
+
 user1 = User.create(email: "userfirst@gmail.com", password: "motdepasse")
 user2 = User.create(email: "usersecond@gmail.com", password: "motdepasse")
 user3 = User.create(email: "userthird@gmail.com", password: "motdepasse")
-user4 = User.create(email: "userfourth@gmail.com", password: "motdepasse")
 
-url = ["https://www.tollgroup.com/sites/default/files/styles/open_graph_image/public/images/2017-10/0770_NikeWarehouse_s1%20this%20one.jpg?itok=IvtdjyEa",
-"https://www.msdsonline.com/wp-content/uploads/warehouse.jpg",
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRepmKU53XgqldC5s7x9xeVVJsOWhgXRcIMM9j0QMIska4UMRDB8w"
+user1.remote_photo_url = "https://res.cloudinary.com/dixy9tipv/image/upload/v1520958309/wozlfc0ypqwwsi9npaia.png"
+user2.remote_photo_url = "https://res.cloudinary.com/dixy9tipv/image/upload/v1520958292/iiadhxkv2z6f3xypw92v.jpg"
+user3.remote_photo_url = "https://res.cloudinary.com/dixy9tipv/image/upload/v1520958275/zdoeone2bug1s2v6dgn1.png"
+
+user1.save
+user2.save
+user3.save
+
+urls = ["https://res.cloudinary.com/dixy9tipv/image/upload/v1520960396/mahadjnu4wzx0jzteyph.jpg",
+"https://res.cloudinary.com/dixy9tipv/image/upload/v1520960395/kw3yhll0voa2migquueb.jpg",
+"https://res.cloudinary.com/dixy9tipv/image/upload/v1520960394/xzkfmly7sano2b3ofz8s.jpg"
 ]
 
- 20.times do
+cities = ['Colombelles', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Cournon d'Auvergne", "Argentre du Plessis", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
+
+20.times do
   args_hash = {
-    address: Faker::Address.street_address + ', ' + Faker::Address.city,
     surface: rand(100..500),
     pallets: rand(30..200),
     description: Faker::Lorem.paragraph(6),
@@ -24,8 +35,9 @@ url = ["https://www.tollgroup.com/sites/default/files/styles/open_graph_image/pu
   }
 
   warehouse = Warehouse.new(args_hash)
-  warehouse.user = [user1, user2, user3, user4].sample
-  warehouse.remote_photo_url = url.sample
+  warehouse.user = [user1, user2, user3].sample
+  warehouse.address = cities.sample
+  warehouse.remote_photo_url = urls.sample
   warehouse.save
 
  end

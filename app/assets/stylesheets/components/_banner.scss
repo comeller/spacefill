@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: center;
 }
+.banner-content {
+  max-width: 100%;
+}
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
@@ -23,14 +26,20 @@
   display: inline-flex;
   padding-top: 10vh;
 }
-.search-bar-container {
+#search-form {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border-radius: 2px;
+  // border-radius: 2px;
   font-size: 20px;
+  button {
+    flex: 0 0 180px;
+    margin-bottom: 5px;
+  }
 }
 .search-bar-input {
+  flex: 0 0 350px;
   position: relative;
   color: #CDCDCD;
   border-top-left-radius: 6px;
@@ -38,6 +47,7 @@
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   margin-right: 5px;
+  margin-bottom: 5px;
   i {
     position: absolute;
     left: 12px;
@@ -46,9 +56,8 @@
     color: #484848;
   }
 }
-#warehouse_address {
-  padding-left: 30px;
-  width: 350px;
+#warehouse_localisation {
+  padding-left: 35px;
 }
 
 #banner-form {
