@@ -27,12 +27,20 @@
 }
 
 .catalog-card {
+  color: black;
+  text-decoration: none;
+  text-decoration-line: none;
   flex: 0 0 360px;
   background-color: white;
   height: 350px;
   margin-bottom: 15px;
   border-radius: 2px;
   box-shadow: 1px 2px 2px #d5d6d8;
+}
+
+.catalog-card:hover {
+  text-decoration: none;
+  text-decoration-line: none;
 }
 
 .photo-box {
