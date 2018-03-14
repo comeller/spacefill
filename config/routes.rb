@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     collection do
       get 'manage-your-space', to: "warehouses#manage_your_space"
     end
-    resources :bookings, only: [:show, :index]
+    resources :bookings, only: [:show, :index, :create]
+
+
   end
 
   resources :bookings, only: [] do
