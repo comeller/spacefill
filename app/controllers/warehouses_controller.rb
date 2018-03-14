@@ -3,13 +3,15 @@ class WarehousesController < ApplicationController
 
   def index
     @warehouses = Warehouse.all
-    # @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
-    # @markers = @warehouses.map do |warehouse|
-    #   {
-    #     lat: warehouse.latitude,
-    #     lng: warehouse.longitude
-    #   }
-    # end
+    @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
+    @markers = @warehouses.map do |warehouse|
+      {
+        lat: warehouse.latitude,
+        lng: warehouse.longitude,
+        # Icons: comment to come back to google red pins
+        icon: 'http://res.cloudinary.com/dixy9tipv/image/upload/c_scale,h_50/v1520948069/152094739257384144.png',
+      }
+    end
   end
 
   def show
