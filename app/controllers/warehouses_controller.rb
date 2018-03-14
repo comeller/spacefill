@@ -6,7 +6,7 @@ class WarehousesController < ApplicationController
     if params[:query_localisation].present?
       # sql_query = "address ILIKE :query_localisation and latitude is not null and longitude is not null"
       # @warehouses = Warehouse.where(sql_query, query_localisation: "%#{params[:query_localisation]}%")
-      @warehouses = Warehouse.near(params[:query_localisation], 10)
+      @warehouses = Warehouse.near(params[:query_localisation], 50)
       @warehouses = Warehouse.where.not(latitude: nil, longitude: nil) if @warehouses.first.nil?
     else
       @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
