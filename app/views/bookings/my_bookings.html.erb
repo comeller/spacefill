@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>My bookings</h1>
+  <% @bookings.each do |booking| %>
+    <div class="request-card">
+      <p>Date: <%= booking.created_at %></p>
+      <p>Number of pallets: <%= booking.booked_pallets %></p>
+      <p>Description: <%= booking.customer_request %></p>
+      <div class="warehouse-targeted">
+        <p>Address: <%= booking.warehouse.address %></p>
+        <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.warehouse.photo %>')">
+        </div>
+      </div>
+      <p>Status: <%= booking.status %></p>
+    </div>
+<% end %>
+</div>
+
