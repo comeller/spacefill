@@ -20,7 +20,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "/bookings/my_bookings" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "My bookings") %>
               <% end %>
             </li>
             <li>
@@ -57,12 +57,12 @@
           </li>
           <li>
             <%= link_to "/bookings/my_bookings" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "My bookings") %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <%= link_to manage_your_space_warehouses_path do %>
+              <i class="fa fa-cog"></i>  <%= t(".settings", default: "My warehouses") %>
             <% end %>
           </li>
           <li>
