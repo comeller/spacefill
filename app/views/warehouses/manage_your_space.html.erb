@@ -56,12 +56,11 @@
         </div>
     <% end %>
       <div class="wrap-bookings">
-        <h3>Your bookings for this warehouse</h3>
         <% warehouse.bookings.each do |booking| %>
           <div class="dashboard-booking">
-            <h4><%= booking.created_at.strftime("%m/%d/%Y") %></h4>
-            <p>Pallet slots required: <%= booking.booked_pallets %></p>
-            <p>Request: <%= booking.customer_request %></p>
+            <h4><%= booking.booked_pallets %> pallets requested on <%= booking.created_at.strftime("%B %w, %Y") %></h4>
+            <p>From: <%= booking.start_date.strftime("%B %w, %Y") %></p>
+            <p>Details: <%= booking.customer_request %></p>
             <% if booking.status == "pending"%>
               <a href="#" class="btn btn-primary">Approve</a>
             <% else %>

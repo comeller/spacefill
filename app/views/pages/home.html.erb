@@ -13,21 +13,71 @@
   </div>
 </div>
 
-<!-- Description -->
+<!-- KPI -->
 <div class="container">
-  <h2 class="text-center">Comment ça marche?</h2>
+  <div class="row kpi-row">
+    <div class="kpi-box col-xs-12 col-sm-4">
+      <h2>3000</h2>
+      <p>Entrepôts référencés</p>
+    </div>
+    <div class="kpi-box col-xs-12 col-sm-4">
+      <h2>25</h2>
+      <p>Prestataires logistiques</p>
+    </div>
+    <div class="kpi-box col-xs-12 col-sm-4">
+      <h2>0€</h2>
+      <p>Plateforme gratuite</p>
+    </div>
+  </div>
+</div>
+
+<!-- Comment ça marche? -->
+<div class="container how-work-container">
+  <h1 class="text-center how-work-title"><span class="underline-wagon">Comment ça marche?</span></h1>
   <div class="row">
-    <div class="col-sm-6 col-md-3">
-      <p>Définissez vos critères de stockage et éventuellement de transport</p>
+    <div class="col-xs-12 col-md-6">
+      <h3 class="text-center how-work-subtitle">Location d'entrepôts court terme</h3>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">1</h3>
+        <p>Définissez les critères de votre recherche (taille d'entrepôt, durée, location...)</p>
+      </div>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">2</h3>
+        <p>Nous recherchons parmi plus de 3000 entrepôts référencés</p>
+      </div>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">3</h3>
+        <p>Recevez les offres disponibles directement sur notre plateforme en ligne</p>
+      </div>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">4</h3>
+        <p>Louez sans engagement long terme</p>
+      </div>
+      <div class="text-center how-work-btn">
+        <%= link_to 'Louez un entrepôt de court terme', warehouses_path, class: "btn btn-primary"%>
+      </div>
     </div>
-    <div class="col-sm-6 col-md-3">
-      <p>Recevez les devis de nos partenaires</p>
-    </div>
-    <div class="col-sm-6 col-md-3">
-      <p>Choississez l'offre et signez le contrat</p>
-    </div>
-    <div class="col-sm-6 col-md-3">
-      <p>Suivez l'état de vos stocks tout au long du contrat</p>
+    <div class="col-xs-12 col-md-6">
+      <h3 class="text-center how-work-subtitle">Externalisation des stocks</h3>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">1</h3>
+        <p>Définissez vos besoins de stockage</p>
+      </div>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">2</h3>
+        <p>Recevez des devis des meilleurs prestataires en moins de 48h</p>
+      </div>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">3</h3>
+        <p>Sélectionnez l'offre qui vous convient et concractualisez en ligne</p>
+      </div>
+      <div class="how-work-box">
+        <h3 class="kpi-figure">4</h3>
+        <p>Gérez vos stocks directement depuis notre plateforme en ligne</p>
+      </div>
+      <div class="text-center how-work-btn">
+        <%= link_to 'Externalisez mes stocks', warehouses_path, class: "btn btn-primary"%>
+      </div>
     </div>
   </div>
 </div>

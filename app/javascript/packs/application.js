@@ -8,3 +8,5 @@ if (document.querySelector(".certification-choices")) {
   toggleForm();
 }
 
+import "../plugins/flatpickr";
+
