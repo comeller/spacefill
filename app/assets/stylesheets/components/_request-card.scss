@@ -4,23 +4,34 @@
   justify-content: space-around;
   align-items: center;
   font-size: 15px;
-  width: 90%;
 }
 
 .request-card {
-  flex : 0 1 800px;
+  flex : 0 1 900px;
   height: 200px;
   background-color: white;
   border-radius: 2px;
-  border-top: 5px solid #32B796;
   box-shadow: 1px 2px 2px #d5d6d8;
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
   padding: 10px;
 }
+#status-refused {
+  border-left: 6px solid $red;
+}
+#status-canceled {
+  border-left: 6px solid $red;
+}
+#status-pending {
+  border-left: 6px solid $blue;
+}
+#status-approved {
+  border-left: 6px solid $green;
+}
+
 .request-text {
-  width: 60%
+  width: 55%
 }
 .warehouse-targeted {
   width:25%;

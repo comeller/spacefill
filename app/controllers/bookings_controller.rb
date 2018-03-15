@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def my_bookings
-    @bookings = Booking.where(user: current_user).order(:created_at)
+    @bookings = Booking.where(user: current_user).order(created_at: :desc)
     authorize :booking
   end
 
@@ -21,6 +21,15 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+
+  def cancel
+    @booking = Booking.find(params[:id])
+    @booking.status = 'canceled'
+    @booking.save
+    authorize @booking
+    redirect_to my_bookings_bookings_path
   end
 
   private

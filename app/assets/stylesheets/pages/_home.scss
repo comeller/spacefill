@@ -9,7 +9,7 @@
 
 // How does it work
 .how-work-container {
-  height: 100vh;
+  min-height: 100vh;
 }
 .how-work-title {
   .underline-wagon {
@@ -26,7 +26,6 @@
     }
   }
 }
-
 .how-work-subtitle {
   color: $blue;
 }
@@ -42,6 +41,12 @@
   }
   p {
     flex: 0 0 85%;
+  }
+}
+.how-work-btn{
+  margin-bottom: 10px;
+  a {
+    width: 350px;
   }
 }
 .kpi-figure{

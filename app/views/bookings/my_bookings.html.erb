@@ -2,7 +2,8 @@
   <h1 style="text-align: center">My bookings</h1>
   <div class="request-container">
     <% @bookings.each do |booking| %>
-      <div class="request-card">
+      <% status = booking.status %>
+      <div class="request-card" id="status-<%= status %>">
         <div class="request-text">
         <p>Booked on <strong><%= booking.created_at.strftime('%m/%d/%Y') %></strong></p>
         <p>Number of pallets: <%= booking.booked_pallets %></p>
@@ -17,9 +18,14 @@
         <% end %>
         <div class="request-status">
           <p>Status</p>
-          <p><%= booking.status %></p>
+          <div id='booking-status'>
+          <% status = booking.status %>
+            <p class="status-<%= status %>"><%= booking.status.capitalize %></p>
+            <% if booking.status == "pending" %>
+              <%= link_to 'cancel', booking_cancel_path(booking), "data-confirm": 'Are you sure?' %>
+            <% end %>
+          </div>
         </div>
-
       </div>
     <% end %>
   </div>
