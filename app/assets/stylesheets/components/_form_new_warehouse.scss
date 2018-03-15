@@ -12,6 +12,7 @@
 
 .certification-choice {
   background: #FFFFFF;
+  border: 3px solid #FFFFFF;
   padding: 20px;
   border-radius: 5px;
   opacity: .6;
@@ -30,16 +31,15 @@
   flex-wrap: wrap;
   margin: 20px 0;
   .active > label {
-    border: 3px solid #EEE8AA;
+    border: 3px solid #808000;
     color: black;
     opacity: 1;
   }
 }
 
-
-
 .service-choice {
   background: #FFFFFF;
+  border: 3px solid #FFFFFF;
   padding: 20px;
   border-radius: 5px;
   opacity: .4;
