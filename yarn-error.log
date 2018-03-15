@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
 
 PATH: 
-  /Users/PaulEhrhardt/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/PaulEhrhardt/.rbenv/shims:/Users/PaulEhrhardt/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+  /Users/guilhemrobert/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/guilhemrobert/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/guilhemrobert/.rbenv/shims:/Users/guilhemrobert/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
 Yarn version: 
   1.5.1
@@ -20,6 +20,7 @@ npm manifest:
     "dependencies": {
       "@rails/webpacker": "^3.3.0",
       "bootstrap": "3",
+      "flatpickr": "^4.3.2",
       "gmaps": "^0.4.24",
       "jquery": "^3.3.1"
     },
@@ -2217,6 +2218,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/find-up/-/find-up-2.1.0.tgz#45d1b7e506c717ddd482775a2b77920a3c0c57a7"
     dependencies:
       locate-path "^2.0.0"
+  
+  flatpickr@^4.3.2:
+    version "4.3.2"
+    resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.3.2.tgz#6a477043c075ef36c3ff54fadb49b936a64d635f"
   
   flatten@^1.0.2:
     version "1.0.2"
@@ -6104,14 +6109,10 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Missing list of packages to add to your project.
+  Error: Found 1 errors.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:40587:13)
+      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:59470:13
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:116:14
-      at new Promise (<anonymous>)
-      at new F (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:23451:28)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:95:12)
-      at Object.run (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:40599:19)
-      at run (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:89113:20)
+      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
+      at <anonymous>

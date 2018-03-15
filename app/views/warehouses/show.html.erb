@@ -1,8 +1,8 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="warehouse-content" >
+<div class="show-content">
+  <div class="show-container">
+    <div class="information-column">
+        <div class="warehouse-content" >
         <div class="warehouse-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @warehouse.photo %>')">
           <div class="metrics-box">
               <div class="pallets-box">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="warehouse-description">
-            <h3 class="bold-text centered"> Warehouse of <%= @warehouse.pallets %> pallets in <%= @warehouse.address %></h2>
+            <p class="bold-title centered"> Warehouse of <%= @warehouse.pallets %> pallets in <%= @warehouse.address %></p>
           <div class="warehouse-features">
             <div class="feature">
               <div class="feature-title">
@@ -59,16 +59,17 @@
       <div id="map" class ="map-show" style="width: 100%; height: 300px" data-markers="<%= @markers.to_json %>">
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="booking-column">
       <div class="warehouse-request-form">
-        <h2>Book now</h2>
-        <%= simple_form_for [@warehouse, @booking] do |f|  %>
-          <%= f.input :booked_pallets, label: false ,placeholder: "# of pallets" %>
-          <%= f.input :customer_request, label: "Please detail your needs", placeholder: "I would need transportation once a week..." %>
-          <%= f.input :start_date, placeholder: "Start date", label: false, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.button :submit, value: "Book"%>
-        <% end %>
-      </div>
+              <p class="price-title"> <%= @warehouse.public_price %> €</p>
+              <p class="price-subtitle"> per month per pallet</p>
+          <%= simple_form_for [@warehouse, @booking] do |f|  %>
+            <%= f.input :booked_pallets, label: false ,placeholder: "# of pallets", input_html: {style: "font-size: 15px"} %>
+            <%= f.input :customer_request, label: "Please detail your needs", placeholder: "I would need transportation once a week...", input_html: {style: "height: 200px; font-size: 15px"} %>
+            <%= f.input :start_date, placeholder: "Start date", label: false, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, value: "Book Now", class: "btn btn-primary"%>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
