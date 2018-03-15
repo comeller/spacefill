@@ -13,6 +13,10 @@ class WarehousePolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    record.user == user
+  end
+
   def manage_your_space?
     true
   end
