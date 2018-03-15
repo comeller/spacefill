@@ -33,13 +33,13 @@
               <div class="services-box">
                 <ul class="list-inline">
                   <% if warehouse.transportation_services %>
-                  <li> <i class="fa fa-check"></i> Transportation</li>
+                  <li> <%= image_tag "003-delivery-truck.png", class: "icon" %> Transportation</li>
                   <% end %>
                   <% if warehouse.fulfillment_services %>
-                  <li><i class="fa fa-check"></i> Fulfillment</li>
+                  <li><%= image_tag "001-package-for-delivery.png", class: "icon" %> Fulfillment</li>
                   <% end %>
                   <% if warehouse.devanning_services %>
-                  <li><i class="fa fa-check"></i> Devanning</li>
+                  <li><%= image_tag "002-delivery-packages-on-a-trolley.png", class: "icon icon-left-margin" %>Devanning</li>
                   <% end %>
                 </ul>
               </div>

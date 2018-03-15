@@ -1,21 +1,38 @@
+.warehouse-content {
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px #d5d6d8;
+}
+
 .warehouse-image {
+  position: relative;
   height: 50vh;
   background-size: cover;
+  margin-top: 15px;
+}
+
+.warehouse-description {
+  padding-top: 30px;
+  border-top: 5px solid #32B796;
+  background-color: white;
+  margin-bottom: 30px;
 }
 
 .centered {
   text-align: center;
+  justify-content: center;
 }
 
 .warehouse-features {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: 15px;
 }
 
 .feature {
+  margin-top: 15px;
   flex: 1 0 250px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   &:nth-child(1) {
     margin-right: 5px;
   }
@@ -29,4 +46,37 @@
 .black {
   color: black;
   font-weight: bold;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.light-text {
+  font-weight: lighter;
+}
+
+.feature-title {
+  height: 30px;
+  position: relative;
+}
+
+.border-bottom {
+  position: absolute;
+  top:0;
+  left: 25%;
+  right: 25%;
+  border-bottom : 1px solid $gray;
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.description-text {
+  text-align: justify;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
