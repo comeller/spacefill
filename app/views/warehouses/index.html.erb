@@ -7,11 +7,6 @@
         <%= link_to warehouse_path(warehouse), class: "catalog-card" do %>
           <div class="catalog-card">
             <div class="photo-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path warehouse.photo %>')">
-              <% if warehouse.user.photo.nil? %>
-                <img class="company-logo" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-                <% else %>
-                <%= cl_image_tag warehouse.user.photo, class: "company-logo" %>
-              <% end %>
               <div class="price-box">
               <%= warehouse.public_price %> € / month
             </div>
