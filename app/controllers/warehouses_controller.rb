@@ -77,6 +77,8 @@ class WarehousesController < ApplicationController
 
   def manage_your_space
     @warehouses = current_user.warehouses
+    # @warehouse = @warehouses.first
+    # @data_warehouse = @warehouse.create_chart_data
     authorize :warehouse
   end
 
