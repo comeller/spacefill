@@ -31,11 +31,12 @@
     </div>
     <div class="col-md-4">
       <div class="warehouse-request-form">
-        <h2>My request</h2>
+        <h2>Book now</h2>
         <%= simple_form_for [@warehouse, @booking] do |f|  %>
-          <%= f.input :booked_pallets, label: "Number of pallets to be stored" %>
-          <%= f.input :customer_request, label: "Please detail your need: services required, number of loading per month..." %>
-          <%= f.button :submit %>
+          <%= f.input :booked_pallets, label: false ,placeholder: "# of pallets" %>
+          <%= f.input :customer_request, label: "Please detail your needs", placeholder: "I would need transportation once a week..." %>
+          <%= f.input :start_date, placeholder: "Start date", label: false, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, value: "Book"%>
         <% end %>
       </div>
     </div>

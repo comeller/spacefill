@@ -4,9 +4,10 @@
     <% @bookings.each do |booking| %>
       <div class="request-card">
         <div class="request-text">
-        <p>Booked on <strong><%= booking.created_at.strftime('%m/%d/%Y') %></strong></p>
-        <p>Number of pallets: <%= booking.booked_pallets %></p>
-        <p>Request: <%= booking.customer_request.first(250) %></p>
+        <p><strong><%= booking.booked_pallets %></strong> pallet slots needed</p>
+        <p>Preferred start date: <%= booking.start_date.strftime("%B %w, %Y") %></p>
+        <p>Requested on <strong><%= booking.created_at.strftime("%B %w, %Y") %></strong></p>
+        <p>Details: <%= booking.customer_request.first(250) %></p>
         </div>
         <%= link_to warehouse_path(booking.warehouse), class: "warehouse-targeted" do%>
           <div>
