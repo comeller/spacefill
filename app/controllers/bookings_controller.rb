@@ -23,6 +23,15 @@ class BookingsController < ApplicationController
     end
   end
 
+
+  def cancel
+    @booking = Booking.find(params[:id])
+    @booking.status = 'canceled'
+    @booking.save
+    authorize @booking
+    redirect_to my_bookings_bookings_path
+  end
+
   private
 
   def booking_params
