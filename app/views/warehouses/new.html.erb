@@ -3,65 +3,60 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <%= simple_form_for(@warehouse) do |f| %>
-            <%= f.input :address %>
-            <%= f.input :surface, placeholder: "in sq meters" %>
-            <%= f.input :pallets %>
-            <%= f.input :description %>
-            <%= f.input :public_price, label: "Price"%>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
 
-            <h4>Certifications :</h4>
+<!-- !!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!! -->
+<!-- div à ne pas toucher et bien laisser les f.input ! tres important pour faire fonctionner le JS et l'update de table -->
+          <div style="background-color: rgba(255, 255, 255, 0.3); padding: 40px; margin-top: 20px; border-radius: 7px;">
+            <%= simple_form_for(@warehouse) do |f| %>
+              <%= f.input :address %>
+              <%= f.input :surface, placeholder: "in sq meters" %>
+              <%= f.input :pallets %>
+              <%= f.input :description %>
+              <%= f.input :public_price, label: "Price"%>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache , as: :hidden %>
+              <%= f.input :food_grade_certified, as: :hidden %>
+              <%= f.input :frozen_certified, as: :hidden %>
+              <%= f.input :alcohol_certified, as: :hidden %>
+              <%= f.input :fulfillment_services, as: :hidden %>
+              <%= f.input :transportation_services, as: :hidden %>
+              <%= f.input :devanning_services, as: :hidden %>
 
-            <div class="certification-choices">
-              <div class="checkbox-customize">
-                <input value="0" type="hidden" name="warehouse[food_grade_certified]">
-                <label class="certification-choice" for="warehouse_food_grade_certified">
-                  <input class="hidden" type="checkbox" value="1" name="warehouse[food_grade_certified]" id="warehouse_food_grade_certified">Food grade certified
-                </label>
+              <h4>Certifications :</h4>
+
+              <div class="certification-choices">
+
+                <div class="certification-choice" data-target="warehouse_food_grade_certified">
+                  Food Grade
+                </div>
+
+                <div class="certification-choice" data-target="warehouse_frozen_certified">
+                  Frozen
+                </div>
+
+                <div class="certification-choice" data-target="warehouse_alcohol_certified">
+                  Alcohol
+                </div>
+
               </div>
 
-              <div class="checkbox-customize">
-                <input value="0" type="hidden" name="warehouse[frozen_certified]">
-                <label class="certification-choice" for="warehouse_frozen_certified">
-                  <input class="hidden" type="checkbox" value="2" name="warehouse[frozen_certified]" id="warehouse_frozen_certified">Frozen certified
-                </label>
+              <h4>Services :</h4>
+
+              <div class="service-choices">
+                <div class="service-choice" data-target="warehouse_fulfillment_services">
+                  Fulfillment
+                </div>
+                <div class="service-choice" data-target="warehouse_transportation_services">
+                  Transportation
+                </div>
+                <div class="service-choice" data-target="warehouse_devanning_services">
+                  Devanning
+                </div>
               </div>
 
-              <div class="checkbox-customize">
-                <input value="0" type="hidden" name="warehouse[alcohol_certified]">
-                <label class="certification-choice" for="warehouse_alcohol_certified">
-                  <input class="hidden" type="checkbox" value="3" name="warehouse[alcohol_certified]" id="warehouse_alcohol_certified">Alcohol certified
-                </label>
-              </div>
-
-            </div>
-
-            <h4>Services :</h4>
-            <div class="service-choices">
-              <div class="checkbox-customize">
-                <input value="0" type="hidden" name="warehouse[fulfillment_services]">
-                <label class="service-choice" for="warehouse_fulfillment_services">
-                  <input class="hidden" type="checkbox" value="4" name="warehouse[fulfillment_services]" id="warehouse_fulfillment_services">Fulfillment services
-                </label>
-              </div>
-              <div class="checkbox-customize">
-                <input value="0" type="hidden" name="warehouse[transportation_services]">
-                <label class="service-choice" for="warehouse_transportation_services">
-                  <input class="hidden" type="checkbox" value="5" name="warehouse[transportation_services]" id="warehouse_transportation_services">Transportation services
-                </label>
-              </div>
-              <div class="checkbox-customize">
-                <input value="0" type="hidden" name="warehouse[devanning_services]">
-                <label class="service-choice" for="warehouse_devanning_services">
-                  <input class="hidden" type="checkbox" value="6" name="warehouse[devanning_services]" id="warehouse_devanning_services">Devanning services
-                </label>
-              </div>
-            </div>
-
-            <%= f.submit "Add your warehouse", class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 20px;" %>
-          <% end %>
+              <%= f.submit "Add your warehouse", class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 20px;" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

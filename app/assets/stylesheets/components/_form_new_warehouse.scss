@@ -3,10 +3,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0;
-  .active > label {
-    border: 3px solid #9ACD32;
-    color: black;
-    opacity: 1;
+  .checkbox {
+    margin: 10px 0px;
   }
 }
 
@@ -15,13 +13,19 @@
   border: 3px solid #FFFFFF;
   padding: 20px;
   border-radius: 5px;
-  opacity: .6;
+  opacity: .8;
   flex: 0 0 30%;
   text-align: center;
+  margin: auto;
   color: black;
   &:hover {
     opacity: 1;
     cursor: pointer;
+  }
+  &.active {
+    border: 3px solid #9ACD32;
+    color: black;
+    opacity: 1;
   }
 }
 
@@ -29,12 +33,12 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px 0;
-  .active > label {
+  .active {
     border: 3px solid #808000;
     color: black;
     opacity: 1;
   }
+  margin: 20px 0;
 }
 
 .service-choice {
@@ -42,9 +46,10 @@
   border: 3px solid #FFFFFF;
   padding: 20px;
   border-radius: 5px;
-  opacity: .4;
+  opacity: .8;
   flex: 0 0 30%;
   text-align: center;
+  margin: auto;
   color: black;
   &:hover {
     opacity: 1;
@@ -52,7 +57,7 @@
   }
 }
 
-.checkbox-customize {
+.checkbox-test {
   position: relative;
   display: block;
   margin-top: 10px;
