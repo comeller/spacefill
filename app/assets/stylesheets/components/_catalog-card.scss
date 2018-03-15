@@ -138,9 +138,9 @@
 
 #map {
   flex: 0 0 450px;
-  height: 100%;
-  position: sticky !important;
   top: 0 !important;
   background-color: white;
   overflow: hidden;
+  position: fixed;
 }
+
