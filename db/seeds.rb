@@ -27,7 +27,7 @@ requests = ["We are a small company, we would need transportation once a week",
   "Your space seems perfect for us, very simple need"
 ]
 
-statuses = ["pending", "approved", "refused", "ended"]
+statuses = ["pending", "approved", "refused"]
 # -------------
 
 10.times do
@@ -61,6 +61,9 @@ statuses = ["pending", "approved", "refused", "ended"]
     booking = Booking.new(booking_hash)
     booking.warehouse = warehouse
     booking.user = user
+    booking.start_date = Faker::Date.between(Date.today, Date.new(2019,1,30))
     booking.save
   end
  end
+
+ puts "DB well seeded"
