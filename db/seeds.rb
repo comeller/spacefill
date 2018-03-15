@@ -27,7 +27,7 @@ requests = ["We are a small company, we would need transportation once a week",
   "Your space seems perfect for us, very simple need"
 ]
 
-statuses = ["pending", "approved", "refused"]
+statuses = ["pending", "approved", "refused", "ended"]
 # -------------
 
 10.times do
