@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "List your warehouse", new_warehouse_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add your warehouse", new_warehouse_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Contact : +33 (0)6 65 10 38 49", "", class: "navbar-wagon-item navbar-wagon-link js-scroll-trigger" %>
 
       <!-- Avatar with dropdown menu -->
@@ -38,7 +38,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "List your warehouse", new_warehouse_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add your warehouse", new_warehouse_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Contact : +33 (0)6 65 10 38 49", "", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn btn-default" %>
     <% end %>
@@ -52,7 +52,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to new_warehouse_path do %>
-              <i class="fa fa-warehouse"></i> <%= "List your Warehouse" %>
+              <i class="fa fa-warehouse"></i> <%= "Add your Warehouse" %>
             <% end %>
           </li>
           <li>

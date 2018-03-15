@@ -1,0 +1,68 @@
+.certification-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  .active > label {
+    border: 3px solid #9ACD32;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.certification-choice {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .6;
+  flex: 0 0 30%;
+  text-align: center;
+  color: black;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.service-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  .active > label {
+    border: 3px solid #EEE8AA;
+    color: black;
+    opacity: 1;
+  }
+}
+
+
+
+.service-choice {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  color: black;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.checkbox-customize {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 175px;
+}
+
+h4 {
+  margin-top: 40px;
+  text-align: left;
+}
+
+
