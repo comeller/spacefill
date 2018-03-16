@@ -10,7 +10,6 @@ class WarehousesController < ApplicationController
     else
       @warehouses = Warehouse.where.not(latitude: nil, longitude: nil)
     end
-    # raise
 
     if params[:surface].present?
       @warehouses = @warehouses.reject {|warehouse| warehouse.surface < params[:surface].to_i}
