@@ -10,5 +10,15 @@
     });
   }
 
-  export { toggleCheckbox }
+  function toggleInput() {
+    const inputs = document.querySelectorAll(".event-input")
+    inputs.forEach((input) => {
+      console.log("in event listener")
+      input.addEventListener("blur", (event) => {
+      document.getElementById('filters').submit();
+      })
+    });
+  }
+
+  export { toggleCheckbox, toggleInput }
 
