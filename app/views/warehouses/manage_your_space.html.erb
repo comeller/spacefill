@@ -55,6 +55,8 @@
           </div>
         </div>
     <% end %>
+    <div class="chart1" data-chart=<%= warehouse.create_chart_data.to_json %>></div>
+
       <div class="wrap-bookings">
         <% warehouse.bookings.each do |booking| %>
           <div class="dashboard-booking">

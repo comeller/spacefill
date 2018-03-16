@@ -9,4 +9,4 @@ if (document.querySelector(".certification-choices")) {
 }
 
 import "../plugins/flatpickr";
-
+import "../components/googlechart";
