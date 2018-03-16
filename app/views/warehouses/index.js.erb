@@ -1,0 +1,76 @@
+function refreshMap() {
+  console.log('in map')
+  const head = document.querySelector("head");
+  const scriptElement = document.createElement('script');
+  scriptElement.src = '<%= javascript_pack_tag "map" %>'.match(/src="(.*)">/)[1];
+  head.appendChild(scriptElement);
+  // const script = document.querySelector("#js-pack-map script");
+  // const packScript = '<%= javascript_pack_tag "map" %>';
+  // const src = packScript.match(/src="(.*)">/)[1]
+  // script.src = src;
+  console.log('<%= javascript_pack_tag "map" %>');
+}
+
+
+function refreshResults(innerHTML) {
+  console.log('in results')
+  const newResults = document.getElementById('new-results');
+  newResults.innerHTML = innerHTML;
+  setTimeout(function() {
+    refreshMap();
+  }, 200);
+}
+
+
+
+
+
+
+// function refreshMap() {
+//   const mapElement = document.getElementById('map');
+//   if (mapElement) { // don't try to build a map if there's no div#map to inject in
+//   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+//   const markers = JSON.parse(mapElement.dataset.markers);
+//   // Snazzy maps style
+//   const styles = [
+//     {
+//         "featureType": "administrative.country",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "visibility": "simplified"
+//             },
+//             {
+//                 "hue": "#ff0000"
+//             }
+//         ]
+//     }
+//   ]
+
+
+
+
+//   map.addMarkers(markers);
+//   map.addStyle({
+//     styles: styles,
+//     mapTypeId: 'map_style'
+//   });
+
+
+//   map.setStyle('map_style');
+//   if (markers.length === 0) {
+//     map.setZoom(2);
+//   } else if (markers.length === 1) {
+//     map.setCenter(markers[0].lat, markers[0].lng);
+//     map.setZoom(8);
+//   } else {
+//     map.fitLatLngBounds(markers);
+//   }
+// }
+
+
+// }
+
+refreshResults('<%= j render "warehouses/results", warehouses: @warehouses, markers: @markers %>');
+
+
