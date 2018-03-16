@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>My warehouses</h1>
   <% @warehouses.each do |warehouse| %>
     <%= link_to warehouse_path(warehouse), class: "catalog-card" do %>
       <div class="catalog-card dashboard-card">
@@ -55,22 +54,30 @@
           </div>
         </div>
     <% end %>
-    <div class="chart1" data-chart=<%= warehouse.create_chart_data.to_json %>></div>
-
-      <div class="wrap-bookings">
-        <% warehouse.bookings.each do |booking| %>
-          <div class="dashboard-booking">
-            <h4><%= booking.booked_pallets %> pallets requested on <%= booking.created_at.strftime("%B %w, %Y") %></h4>
-            <p>From: <%= booking.start_date.strftime("%B %w, %Y") %></p>
-            <p>Details: <%= booking.customer_request %></p>
-            <% if booking.status == "pending"%>
-              <a href="#" class="btn btn-primary">Approve</a>
-            <% else %>
-              <p>Request status: <%= booking.status %></p>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+    <% if warehouse.bookings.where(status: "approved").empty? && warehouse.bookings.where(status: "pending").empty?%>
+      <p class="centered btn btn-success btn-block small">No bookings</p>
+      <% else %>
+        <div class="chart1" data-chart=<%= warehouse.create_chart_data.to_json %>></div>
+        <div class="wrap-bookings">
+          <% warehouse.bookings.each do |booking| %>
+            <div class="dashboard-booking request-container status-<%= booking.status %>">
+              <div class="request-text">
+                <p><strong><%= booking.booked_pallets %> pallets requested from <%= booking.start_date.strftime("%b %d, %Y") %></strong></p>
+                <p><strong>Requested on </strong><%= booking.created_at.strftime("%b %d, %Y") %></p>
+                <p><strong>Details: </strong><%= booking.customer_request %></p>
+              </div>
+              <div class="request-status buttons">
+                <% if booking.status == "pending"%>
+                  <%= link_to "Approve", bookings_approve_path(id: booking.id), method: :patch, class:"btn btn-success btn-block small"%>
+                  <%= link_to "Decline", bookings_decline_path(id: booking.id), method: :patch, class:"btn btn-danger btn-block small"%>
+                <% else %>
+                  <p><%= booking.status.capitalize %></p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
     </div>
   <% end %>
 </div>

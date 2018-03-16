@@ -35,6 +35,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def approve
+    @booking = Booking.find(params[:id])
+    @booking.status = "approved"
+    @booking.save
+    authorize @booking
+    redirect_to manage_your_space_warehouses_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "refused"
+    @booking.save
+    authorize @booking
+    redirect_to manage_your_space_warehouses_path
+  end
+
   private
 
   def booking_params

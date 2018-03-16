@@ -18,10 +18,12 @@ function drawChart(item) {
     const data = GoogleCharts.api.visualization.arrayToDataTable(chartData);
 
     const options = {
-        width: 600,
-        height: 400,
+        title: 'Slots occupancy',
+        width: 900,
+        height: 300,
         legend: { position: 'top', maxLines: 3 },
-        bar: { groupWidth: '75%' },
+        bar: { groupWidth: '60%' },
+        colors: ['#32B796', '#E67E22'],
         isStacked: true,
       };
     const chart = new GoogleCharts.api.visualization.ColumnChart(item);
