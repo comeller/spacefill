@@ -18,7 +18,7 @@ function drawChart(item) {
     const data = GoogleCharts.api.visualization.arrayToDataTable(chartData);
 
     const options = {
-        title: 'Your next 12 months',
+        title: 'Slots occupancy',
         width: 900,
         height: 300,
         legend: { position: 'top', maxLines: 3 },
