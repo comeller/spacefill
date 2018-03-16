@@ -20,7 +20,7 @@ urls = [
 "http://res.cloudinary.com/dixy9tipv/image/upload/v1521133656/okr6ked7gpyfbs2lncrx.jpg"
 ]
 
-cities = ['Colombelles', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Cournon d'Auvergne", "Argentre du Plessis", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
+cities = ['Melun', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Vincennes", "Nanterre", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
 
 # BOOKINGS CREATION
 requests = ["We are a small company, we would need transportation once a week",
@@ -36,7 +36,7 @@ statuses = ["pending", "approved", "refused"]
     surface: rand(100..500),
     pallets: rand(30..200),
     description: Faker::Lorem.paragraph(6),
-    public_price: rand(500..1500),
+    public_price: rand(9..15),
     food_grade_certified: [true, false].sample,
     alcohol_certified: [true, false].sample,
     frozen_certified: [true, false].sample,
