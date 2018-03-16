@@ -14,9 +14,10 @@ user1.save
 user2.save
 user3.save
 
-urls = ["https://res.cloudinary.com/dixy9tipv/image/upload/v1520960396/mahadjnu4wzx0jzteyph.jpg",
-"https://res.cloudinary.com/dixy9tipv/image/upload/v1520960395/kw3yhll0voa2migquueb.jpg",
-"https://res.cloudinary.com/dixy9tipv/image/upload/v1520960394/xzkfmly7sano2b3ofz8s.jpg"
+urls = [
+"http://res.cloudinary.com/dixy9tipv/image/upload/v1521133660/vlhujbvuvarairgoq02p.jpg",
+"http://res.cloudinary.com/dixy9tipv/image/upload/v1521133659/xp5ppalrcvdgucyy2dpc.jpg",
+"http://res.cloudinary.com/dixy9tipv/image/upload/v1521133656/okr6ked7gpyfbs2lncrx.jpg"
 ]
 
 cities = ['Colombelles', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Cournon d'Auvergne", "Argentre du Plessis", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
@@ -27,7 +28,7 @@ requests = ["We are a small company, we would need transportation once a week",
   "Your space seems perfect for us, very simple need"
 ]
 
-statuses = ["pending", "approved", "refused", "ended"]
+statuses = ["pending", "approved", "refused"]
 # -------------
 
 10.times do
@@ -61,6 +62,9 @@ statuses = ["pending", "approved", "refused", "ended"]
     booking = Booking.new(booking_hash)
     booking.warehouse = warehouse
     booking.user = user
+    booking.start_date = Faker::Date.between(Date.today, Date.new(2019,1,30))
     booking.save
   end
  end
+
+ puts "DB well seeded"

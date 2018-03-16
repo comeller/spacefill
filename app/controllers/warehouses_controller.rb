@@ -48,6 +48,7 @@ class WarehousesController < ApplicationController
         lng: warehouse.longitude,
         # Icons: comment to come back to google red pins
         icon: 'http://res.cloudinary.com/dixy9tipv/image/upload/c_scale,h_50/v1520948069/152094739257384144.png',
+        infoWindow: { content: render_to_string(partial: "map_box", locals: { warehouse: warehouse }) }
       }
     end
 
