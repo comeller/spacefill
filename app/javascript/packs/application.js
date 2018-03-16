@@ -8,10 +8,11 @@ if (document.querySelector(".certification-choices")) {
   toggleForm();
 };
 
-import { toggleCheckbox } from '../components/filters';
+import { toggleCheckbox, toggleInput } from '../components/filters';
 
  if (document.getElementById("filters")) {
   toggleCheckbox();
+  toggleInput();
   }
 
 
