@@ -5,8 +5,8 @@
       <% status = booking.status %>
       <div class="request-card status-<%= status %>" id="card-booking_<%=booking.id%>" >
         <div class="request-text">
-        <h4><%= booking.booked_pallets %> pallets requested on <%= booking.created_at.strftime("%B %w, %Y") %></h4>
-        <p>From: <%= booking.start_date.strftime("%B %w, %Y") %></p>
+        <h4><%= booking.booked_pallets %> pallets from <%= booking.start_date.strftime("%b %d, %Y") %></h4>
+        <p>Created on: <%= booking.created_at.strftime("%b %d, %Y") %></p>
         <p>Details: <%= booking.customer_request %></p>
         </div>
         <%= link_to warehouse_path(booking.warehouse), class: "warehouse-targeted" do%>
