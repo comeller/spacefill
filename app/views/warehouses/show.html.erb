@@ -1,44 +1,75 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="warehouse-content" >
-        <h2 class="centered"><%= @warehouse.pallets %> pallets in <%= @warehouse.address %></h2>
-        <div class="warehouse-image" style="background-image: url('<%= cl_image_path @warehouse.photo, height: 300, width: 400, crop: :fill %>')"></div>
+<div class="show-content">
+  <div class="show-container">
+    <div class="information-column">
+        <div class="warehouse-content" >
+        <div class="warehouse-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @warehouse.photo %>')">
+          <div class="metrics-box">
+              <div class="pallets-box">
+                <p class="metric"> <%= @warehouse.pallets %> </p>
+                Pallets <br>
+              </div>
+              <div class="separator">
+              </div>
+              <div class="surface-box">
+                <p class="metric"> <%= @warehouse.surface %></p>
+                Sq. Meters <br>
+              </div>
+            </div>
+        </div>
         <div class="warehouse-description">
-            <h3>Description</h3>
-            <p><%= @warehouse.description %></p>
+            <p class="bold-title centered"> Warehouse of <%= @warehouse.pallets %> pallets in <%= @warehouse.address %></p>
           <div class="warehouse-features">
             <div class="feature">
-              <h3>Certifications</h3>
-              <ul class="list-inline grey">
-                <li class="<%= 'black' if @warehouse.food_grade_certified %>">Food-grade</li>
-                <li class="<%= 'black' if @warehouse.frozen_certified %>">Frozen</li>
-                <li class="<%= 'black' if @warehouse.alcohol_certified %>">Alcohol</li>
-              </ul>
+              <div class="feature-title">
+                <p class="border-bottom"> Services</p>
+              </div>
+              <ul class="list-inline centered margin-top-5">
+                  <% if @warehouse.transportation_services %>
+                  <li> <%= image_tag "003-delivery-truck.png", class: "icon" %> Transportation</li>
+                  <% end %>
+                  <% if @warehouse.fulfillment_services %>
+                  <li><%= image_tag "001-package-for-delivery.png", class: "icon" %> Fulfillment</li>
+                  <% end %>
+                  <% if @warehouse.devanning_services %>
+                  <li><%= image_tag "002-delivery-packages-on-a-trolley.png", class: "icon icon-left-margin" %>Devanning</li>
+                  <% end %>
+                </ul>
             </div>
             <div class="feature">
-              <h3>Services</h3>
-              <ul class="list-inline grey">
-                <li class="<%= 'black' if @warehouse.fulfillment_services %>">Fulfillement</li>
-                <li class="<%= 'black' if @warehouse.transportation_services %>">Transportation</li>
-                <li class="<%= 'black' if @warehouse.devanning_services %>">Devanning</li>
-              </ul>
+              <div class="feature-title">
+                <p class="border-bottom"> Certifications</p>
+              </div>
+                <ul class="list-inline centered margin-top-5">
+                  <% if @warehouse.food_grade_certified %>
+                  <li> <i class="fa fa-lemon"></i> Food Certified</li>
+                  <% end %>
+                  <% if @warehouse.frozen_certified %>
+                  <li> <i class="fas fa-snowflake"></i> Frozen Certified</li>
+                  <% end %>
+                  <% if @warehouse.alcohol_certified %>
+                  <li><i class="fas fa-glass-martini"></i> Alcohol Certified</li>
+                  <% end %>
+                </ul>
             </div>
           </div>
+          <p class="light-text margin-top description-text"><%= @warehouse.description %></p>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="warehouse-request-form">
-        <h2>Book now</h2>
-        <%= simple_form_for [@warehouse, @booking] do |f|  %>
-          <%= f.input :booked_pallets, label: false ,placeholder: "# of pallets" %>
-          <%= f.input :customer_request, label: "Please detail your needs", placeholder: "I would need transportation once a week..." %>
-          <%= f.input :start_date, placeholder: "Start date", label: false, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.button :submit, value: "Book"%>
-        <% end %>
+      <div id="map" class ="map-show" style="width: 100%; height: 300px" data-markers="<%= @markers.to_json %>">
       </div>
+    </div>
+    <div class="booking-column">
+      <div class="warehouse-request-form">
+              <p class="price-title"> <%= @warehouse.public_price %> €</p>
+              <p class="price-subtitle"> per month per pallet</p>
+          <%= simple_form_for [@warehouse, @booking] do |f|  %>
+            <%= f.input :booked_pallets, label: false ,placeholder: "# of pallets", input_html: {style: "font-size: 15px"} %>
+            <%= f.input :customer_request, label: "Please detail your needs", placeholder: "I would need transportation once a week...", input_html: {style: "height: 200px; font-size: 15px"} %>
+            <%= f.input :start_date, placeholder: "Start date", label: false, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, value: "Book Now", class: "btn btn-primary"%>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>

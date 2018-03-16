@@ -48,6 +48,7 @@ class WarehousesController < ApplicationController
         lng: warehouse.longitude,
         # Icons: comment to come back to google red pins
         icon: 'http://res.cloudinary.com/dixy9tipv/image/upload/c_scale,h_50/v1520948069/152094739257384144.png',
+        infoWindow: { content: render_to_string(partial: "map_box", locals: { warehouse: warehouse }) }
       }
     end
 
@@ -56,6 +57,13 @@ class WarehousesController < ApplicationController
   def show
     @warehouse = Warehouse.find(params[:id])
     @booking = Booking.new
+
+    @markers = [{
+        lat: @warehouse.latitude,
+        lng: @warehouse.longitude,
+        # Icons: comment to come back to google red pins
+        icon: 'http://res.cloudinary.com/dixy9tipv/image/upload/c_scale,h_50/v1520948069/152094739257384144.png',
+      }]
     authorize @warehouse
   end
 
@@ -73,6 +81,19 @@ class WarehousesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @warehouse = Warehouse.find(params[:id])
+    authorize @warehouse
+  end
+
+  def update
+    @warehouse = Warehouse.find(params[:id])
+    authorize @warehouse
+    @warehouse.update(warehouse_params)
+    flash[:notice] = 'Your warehouse is updated !'
+    redirect_to warehouse_path(@warehouse)
   end
 
   def manage_your_space

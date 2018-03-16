@@ -20,11 +20,17 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         ]
     }
   ]
+
+
+
+
   map.addMarkers(markers);
   map.addStyle({
     styles: styles,
     mapTypeId: 'map_style'
   });
+
+
   map.setStyle('map_style');
   if (markers.length === 0) {
     map.setZoom(2);

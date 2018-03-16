@@ -1,0 +1,73 @@
+.certification-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  .checkbox {
+    margin: 10px 0px;
+  }
+}
+
+.certification-choice {
+  background: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .8;
+  flex: 0 0 30%;
+  text-align: center;
+  margin: auto;
+  color: black;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+    border: 3px solid #9ACD32;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.service-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .active {
+    border: 3px solid #808000;
+    color: black;
+    opacity: 1;
+  }
+  margin: 20px 0;
+}
+
+.service-choice {
+  background: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .8;
+  flex: 0 0 30%;
+  text-align: center;
+  margin: auto;
+  color: black;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.checkbox-test {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 175px;
+}
+
+h4 {
+  margin-top: 40px;
+  text-align: left;
+}
+
+
