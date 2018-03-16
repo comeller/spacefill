@@ -1,8 +1,10 @@
+
 Arguments:
   /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js install --save sweetalert
 
 PATH: 
   /Users/davidbenamran/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/davidbenamran/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/davidbenamran/.rbenv/shims:/Users/davidbenamran/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/local/sbin
+
 
 
 Yarn version: 
@@ -7381,9 +7383,6 @@ Lockfile:
       yeoman-environment "^2.0.5"
 
 Trace: 
-
-
-  Error: `install` has been replaced with `add` to add new dependencies. Run "yarn add sweetalert" instead.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
       at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:59470:13
       at Generator.next (<anonymous>)
