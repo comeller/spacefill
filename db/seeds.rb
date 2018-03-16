@@ -20,7 +20,7 @@ urls = [
 "http://res.cloudinary.com/dixy9tipv/image/upload/v1521133656/okr6ked7gpyfbs2lncrx.jpg"
 ]
 
-cities = ['Melun', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Vincennes", "Nanterre", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
+cities = ['Melun', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Asnières sur seine", "Nanterre", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
 
 # BOOKINGS CREATION
 requests = ["We are a small company, we would need transportation once a week",
