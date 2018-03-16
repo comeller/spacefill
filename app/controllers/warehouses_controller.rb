@@ -83,6 +83,19 @@ class WarehousesController < ApplicationController
     end
   end
 
+  def edit
+    @warehouse = Warehouse.find(params[:id])
+    authorize @warehouse
+  end
+
+  def update
+    @warehouse = Warehouse.find(params[:id])
+    authorize @warehouse
+    @warehouse.update(warehouse_params)
+    flash[:notice] = 'Your warehouse is updated !'
+    redirect_to warehouse_path(@warehouse)
+  end
+
   def manage_your_space
     @warehouses = current_user.warehouses
     authorize :warehouse

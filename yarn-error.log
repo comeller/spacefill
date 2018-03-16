@@ -2,7 +2,7 @@ Arguments:
   /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
 
 PATH: 
-  /Users/PaulEhrhardt/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/PaulEhrhardt/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/PaulEhrhardt/.rbenv/shims:/Users/PaulEhrhardt/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+  /Users/jjmac/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/jjmac/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/jjmac/.rbenv/shims:/usr/local/opt/rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin
 
 Yarn version: 
   1.5.1
