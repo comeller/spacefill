@@ -20,7 +20,7 @@ urls = [
 "http://res.cloudinary.com/dixy9tipv/image/upload/v1521133656/okr6ked7gpyfbs2lncrx.jpg"
 ]
 
-cities = ['Melun', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Asnières sur seine", "Nanterre", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry", "Aubervilliers" ]
+cities = ['Melun', 'Paris', 'Versailles', 'Velizy-Villacoublay', 'Metz', 'Nancy', 'Thionville','Verdun', 'Strasbourg', 'Bordeaux', "Asnières sur seine", "Nanterre", "Créteil","Issy les Moulineaux", "Cergy", "Meaux", "Evry" ]
 
 # BOOKINGS CREATION
 requests = ["We are a small company, we would need transportation once a week",
@@ -67,4 +67,121 @@ statuses = ["pending", "approved", "refused"]
   end
  end
 
- puts "DB well seeded"
+puts "DB general well seeded"
+
+#Seed pour le Demoday
+
+# Create 2 users
+
+paul = User.create(email: "paul@plateauxalsaciens.com", password: "motdepasse")
+david = User.create(email: "david@gmail.com", password: "motdepasse")
+
+# Create paul's warehouse + 3 bookings on it by David: 1 approved + 2 pending
+
+warehouse_paul = Warehouse.new({
+  surface: 3000,
+  pallets: 3000,
+  description: "Espace de stockage aux dernières normes",
+  public_price: 12,
+  food_grade_certified: true,
+  alcohol_certified: true,
+  frozen_certified: true,
+  transportation_services: true,
+  fulfillment_services: true,
+  devanning_services: true,
+  address: "Epinal"
+  })
+warehouse_paul.user = paul
+warehouse_paul.remote_photo_url = urls.sample
+warehouse_paul.save
+
+book1 = Booking.new({
+  customer_request: "A la recherche d'un entrepôt frigorifié",
+  status: 'approved',
+  booked_pallets: 1100,
+  start_date: Date.today,
+  })
+book1.warehouse = warehouse_paul
+book1.user = david
+book1.save
+
+book2 = Booking.new({
+  customer_request: "J'ai besoin d'espace pour des vêtements",
+  status: 'pending',
+  booked_pallets: 600,
+  start_date: Date.new(2018,6,15),
+  })
+book2.warehouse = warehouse_paul
+book2.user = david
+book2.save
+
+ book3 = Booking.new({
+  customer_request: "Je cherche un espace pour stocker des boissons alcoolisés",
+  status: 'pending',
+  booked_pallets: 1200,
+  start_date: Date.new(2018,7,15),
+  })
+book3.warehouse = warehouse_paul
+book3.user = david
+book3.save
+
+# Create david's 2 warehouses
+
+warehouse_david = Warehouse.new({
+  surface: 2000,
+  pallets: 4000,
+  description: "Stock tout partout",
+  public_price: 14,
+  food_grade_certified: true,
+  alcohol_certified: true,
+  frozen_certified: true,
+  transportation_services: true,
+  fulfillment_services: false,
+  devanning_services: true,
+  address: "Aubervilliers"
+  })
+warehouse_david.user = david
+warehouse_david.remote_photo_url = "http://res.cloudinary.com/dixy9tipv/image/upload/v1521133659/xp5ppalrcvdgucyy2dpc.jpg"
+warehouse_david.save
+
+warehouse_david_bis = Warehouse.new({
+  surface: 2000,
+  pallets: 4000,
+  description: "Stock tout partout",
+  public_price: 14,
+  food_grade_certified: true,
+  alcohol_certified: true,
+  frozen_certified: true,
+  transportation_services: false,
+  fulfillment_services: false,
+  devanning_services: false,
+  address: "Poissy"
+  })
+warehouse_david_bis.user = david
+warehouse_david_bis.remote_photo_url = "http://res.cloudinary.com/dixy9tipv/image/upload/v1521133660/vlhujbvuvarairgoq02p.jpg"
+warehouse_david_bis.save
+
+# Create paul's 2 bookings: 1 refused sur bis + 1 pending sur david
+
+book4 = Booking.new({
+  customer_request: "J'ai besoin d'espace pour mes plateaux repas",
+  status: 'refused',
+  booked_pallets: 600,
+  start_date: Date.new(2018,6,13),
+  })
+book4.warehouse = warehouse_david
+book4.user = paul
+book4.save
+
+book5 = Booking.new({
+  customer_request: "J'ai besoin d'espace pour mes plateaux repas",
+  status: 'pending',
+  booked_pallets: 600,
+  start_date: Date.new(2018,6,13),
+  })
+book5.warehouse = warehouse_david_bis
+book5.user = paul
+book5.save
+
+puts "Demoday well seeded"
+
