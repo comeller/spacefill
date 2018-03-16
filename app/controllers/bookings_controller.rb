@@ -29,7 +29,10 @@ class BookingsController < ApplicationController
     @booking.status = 'canceled'
     @booking.save
     authorize @booking
-    redirect_to my_bookings_bookings_path
+    respond_to do |format|
+      format.html { redirect_to my_bookings_bookings_path }
+      format.js
+    end
   end
 
   private

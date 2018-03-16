@@ -6,14 +6,18 @@
   }
   .status-refused {
     color: $red;
+    border-left: none;
   }
   .status-canceled {
     color: $red;
+    border-left: none;
   }
   .status-pending {
     color: $blue;
+    border-left: none;
   }
   .status-approved {
     color: $green;
+    border-left: none;
   }
 }

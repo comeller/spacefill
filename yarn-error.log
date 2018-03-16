@@ -1,9 +1,9 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js install --save sweetalert
 
 PATH: 
+  /Users/PaulEhrhardt/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/PaulEhrhardt/.rbenv/shims:/Users/PaulEhrhardt/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
-  /Users/jjmac/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/jjmac/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/jjmac/.rbenv/shims:/usr/local/opt/rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin
 Yarn version: 
   1.5.1
 
@@ -22,6 +22,7 @@ npm manifest:
       "bootstrap": "3",
       "flatpickr": "^4.3.2",
       "gmaps": "^0.4.24",
+      "google-charts": "^1.0.0",
       "jquery": "^3.3.1"
     },
     "devDependencies": {
@@ -2467,6 +2468,10 @@ Lockfile:
   gmaps@^0.4.24:
     version "0.4.24"
     resolved "https://registry.yarnpkg.com/gmaps/-/gmaps-0.4.24.tgz#07f22f0cfc3e4e32498950ffafd7ca635ffc100c"
+  
+  google-charts@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/google-charts/-/google-charts-1.0.0.tgz#a7c49ae8940f35ad21182757e6552c99a5e44632"
   
   graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
     version "4.1.11"
@@ -6109,9 +6114,9 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Found 1 errors.
+  Error: `install` has been replaced with `add` to add new dependencies. Run "yarn add sweetalert" instead.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:59470:13
+      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:21987:13)
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
       at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13

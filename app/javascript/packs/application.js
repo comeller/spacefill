@@ -10,3 +10,6 @@ if (document.querySelector(".certification-choices")) {
 
 import "../plugins/flatpickr";
 import "../components/googlechart";
+
+import { alertCancel } from '../components/sweet_alert';
+alertCancel();
