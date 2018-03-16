@@ -17,16 +17,16 @@
   margin-bottom: 15px;
   padding: 10px;
 }
-#status-refused {
+.status-refused {
   border-left: 6px solid $red;
 }
-#status-canceled {
+.status-canceled {
   border-left: 6px solid $red;
 }
-#status-pending {
+.status-pending {
   border-left: 6px solid $blue;
 }
-#status-approved {
+.status-approved {
   border-left: 6px solid $green;
 }
 

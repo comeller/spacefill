@@ -1,0 +1,14 @@
+function refreshForm() {
+  const bookingCard = document.getElementById('card-booking_<%=@booking.id%>');
+  bookingCard.classList.remove('status-pending');
+  bookingCard.classList.add('status-canceled');
+  const statusCard = bookingCard.lastElementChild.lastElementChild;
+  statusCard.classList.remove('status-pending');
+  statusCard.classList.add('status-canceled');
+  statusCard.innerHTML = '';
+  statusCard.insertAdjacentHTML('beforeend', `<p class='status-canceled'>Canceled</p>`)
+  statusCard.style.border = "none";
+}
+
+refreshForm();
+
