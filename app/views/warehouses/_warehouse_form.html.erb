@@ -1,0 +1,64 @@
+<div class="banner" id="banner-form" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://securecdn.pymnts.com/wp-content/uploads/2016/09/Warehouse-Space-Shortage.jpg);">
+  <div class="banner-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+<!-- !!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!! -->
+<!-- div à ne pas toucher et bien laisser les f.input ! tres important pour faire fonctionner le JS et l'update de table -->
+          <div style="background-color: rgba(255, 255, 255, 0.3); padding: 40px; margin-top: 20px; border-radius: 7px;">
+            <%= simple_form_for(@warehouse) do |f| %>
+              <%= f.input :address %>
+              <%= f.input :surface, placeholder: "in sq meters" %>
+              <%= f.input :pallets %>
+              <%= f.input :description %>
+              <%= f.input :public_price, label: "Price"%>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache , as: :hidden %>
+              <%= f.input :food_grade_certified, as: :hidden %>
+              <%= f.input :frozen_certified, as: :hidden %>
+              <%= f.input :alcohol_certified, as: :hidden %>
+              <%= f.input :fulfillment_services, as: :hidden %>
+              <%= f.input :transportation_services, as: :hidden %>
+              <%= f.input :devanning_services, as: :hidden %>
+
+              <h4>Certifications :</h4>
+
+              <div class="certification-choices">
+
+                <div class="certification-choice <%= "active" if @warehouse.food_grade_certified %>" data-target="warehouse_food_grade_certified">
+                  Food Grade
+                </div>
+
+                <div class="certification-choice <%= "active" if @warehouse.frozen_certified %>" data-target="warehouse_frozen_certified">
+                  Frozen
+                </div>
+
+                <div class="certification-choice <%= "active" if @warehouse.alcohol_certified %>" data-target="warehouse_alcohol_certified">
+                  Alcohol
+                </div>
+
+              </div>
+
+              <h4>Services :</h4>
+
+              <div class="service-choices">
+                <div class="service-choice <%= "active" if @warehouse.fulfillment_services %>" data-target="warehouse_fulfillment_services">
+                  Fulfillment
+                </div>
+                <div class="service-choice <%= "active" if @warehouse.transportation_services %>" data-target="warehouse_transportation_services">
+                  Transportation
+                </div>
+                <div class="service-choice <%= "active" if @warehouse.devanning_services %>" data-target="warehouse_devanning_services">
+                  Devanning
+                </div>
+              </div>
+
+              <%= f.submit "Add your warehouse", class: "btn btn-primary", style: "margin-top: 20px; margin-bottom: 20px;" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

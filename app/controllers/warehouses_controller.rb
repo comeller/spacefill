@@ -61,7 +61,6 @@ class WarehousesController < ApplicationController
   def show
     @warehouse = Warehouse.find(params[:id])
     @booking = Booking.new
-
     @markers = [{
         lat: @warehouse.latitude,
         lng: @warehouse.longitude,
@@ -87,8 +86,23 @@ class WarehousesController < ApplicationController
     end
   end
 
+  def edit
+    @warehouse = Warehouse.find(params[:id])
+    authorize @warehouse
+  end
+
+  def update
+    @warehouse = Warehouse.find(params[:id])
+    authorize @warehouse
+    @warehouse.update(warehouse_params)
+    flash[:notice] = 'Your warehouse is updated !'
+    redirect_to warehouse_path(@warehouse)
+  end
+
   def manage_your_space
     @warehouses = current_user.warehouses
+    # @warehouse = @warehouses.first
+    # @data_warehouse = @warehouse.create_chart_data
     authorize :warehouse
   end
 

@@ -12,10 +12,19 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+
+    <% if params[:action] == "manage_your_space" ||
+          params[:action] == "my_bookings" ||
+          (params[:controller] == "warehouses" && params[:action] == "show") %>
+      <%= render 'shared/navbar-search' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <div id='wrapper'>
       <%= yield %>
     </div>
+
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
