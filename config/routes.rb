@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     end
   end
 
+  patch 'bookings/approve', to: "bookings#approve"
+  patch 'bookings/decline', to: "bookings#decline"
+
   # post 'cancel', to: 'bookings#cancel'
 end
