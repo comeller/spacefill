@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
-  post '/warehouses', to: "warehouses#index"
+  post '/warehouses', to: "warehouses#index", as: 'filter_index'
   resources :warehouses, only: [:show, :index, :new, :create, :edit, :update] do
     collection do
       get 'manage-your-space', to: "warehouses#manage_your_space"
