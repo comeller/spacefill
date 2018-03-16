@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add wepack-cli --dev
 
 PATH: 
-  /Users/guilhemrobert/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/guilhemrobert/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/guilhemrobert/.rbenv/shims:/Users/guilhemrobert/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
+  /Users/guilhemrobert/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/guilhemrobert/.rbenv/shims:/Users/guilhemrobert/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
 Yarn version: 
   1.5.1
@@ -6109,10 +6109,11 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Found 1 errors.
+  Error: Couldn't find package "wepack-cli" on the "npm" registry.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:59470:13
+      at NpmResolver.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:51625:15)
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
       at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
       at <anonymous>
+      at process._tickCallback (internal/process/next_tick.js:118:7)

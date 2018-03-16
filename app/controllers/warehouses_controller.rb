@@ -2,7 +2,6 @@ class WarehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
     if params[:query_localisation].present?
       # sql_query = "address ILIKE :query_localisation and latitude is not null and longitude is not null"
       # @warehouses = Warehouse.where(sql_query, query_localisation: "%#{params[:query_localisation]}%")
@@ -50,6 +49,11 @@ class WarehousesController < ApplicationController
         icon: 'http://res.cloudinary.com/dixy9tipv/image/upload/c_scale,h_50/v1520948069/152094739257384144.png',
         infoWindow: { content: render_to_string(partial: "map_box", locals: { warehouse: warehouse }) }
       }
+    end
+
+    respond_to do |format|
+      format.html {render 'index'}
+      format.js
     end
 
   end
